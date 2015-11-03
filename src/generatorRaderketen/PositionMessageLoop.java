@@ -26,10 +26,16 @@ public class PositionMessageLoop implements Runnable {
         stopped = false;
         while (!stopped) {
             try {
-                Thread.sleep(Long.parseLong(positionMessage.getDelay()));
 
+         int delay = Integer.parseInt(positionMessage.getDelay());
+
+
+                //Thread.sleep(Long.parseLong(positionMessage.getDelay()));
+Thread.sleep(delay);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            } catch (NumberFormatException e){
+                System.out.println(positionMessage.getDelay());
             }
             sendXml(positionMessage);
             stop();

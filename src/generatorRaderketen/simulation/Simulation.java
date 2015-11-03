@@ -45,8 +45,6 @@ public class Simulation implements Thread.UncaughtExceptionHandler {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-
-
     }
 
     private long getWaitTime() {
@@ -107,10 +105,7 @@ public class Simulation implements Thread.UncaughtExceptionHandler {
             // to the main thread so they can be reported to the user of the simulation
             thread.setUncaughtExceptionHandler(this);
             thread.start();
-
         }
-
-
     }
 
     public void stop() {
