@@ -1,9 +1,8 @@
 package generatorRaderketen.simulation;
 
 import be.kdg.se3.proxy.IncidentServiceProxy;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.XML;
+import org.exolab.castor.dsml.XML;
+
 
 import java.io.IOException;
 
@@ -15,7 +14,7 @@ public class IncidentReporter {
     private static IncidentServiceProxy incidentServiceProxy = new IncidentServiceProxy();
 
     public static String getIncident(String shipId) {
-        String xml = "";
+      /*  String xml = "";
         try {
 
             String url = "www.services4se3.com/incidentservice/simulate/" + shipId;
@@ -30,7 +29,8 @@ public class IncidentReporter {
             e.printStackTrace();
         }
 
-        return xml;
+        return xml;*/
+        return "";
     }
 
 }

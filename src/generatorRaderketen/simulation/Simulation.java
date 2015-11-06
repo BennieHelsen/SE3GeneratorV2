@@ -29,7 +29,7 @@ public class Simulation implements Thread.UncaughtExceptionHandler {
         processAllRouteFiles();
 
         while (running_incident) {
-            handleIncident();
+     //       handleIncident();
         }
 
     }
@@ -97,15 +97,17 @@ public class Simulation implements Thread.UncaughtExceptionHandler {
     }
 
     private void processRouteFile(String shipId, ArrayList<Route> routes) {
-        for (Route route : routes) {
-            PositionMessageLoop loop = new PositionMessageLoop(new PositionMessage(route.getDelay(), route.getDistanceToLoadingDock(), shipId, route.getCentralId()));
-            loops.add(loop);
+
+            RouteFileLoop loop = new RouteFileLoop(shipId,routes);
+           // loops.add(loop);
             Thread thread = new Thread(loop);
             // register a handler that is used to transfer unexpected errors in  positionmessage threads
             // to the main thread so they can be reported to the user of the simulation
             thread.setUncaughtExceptionHandler(this);
             thread.start();
-        }
+
+        System.out.println("routeloop started" + shipId);
+
     }
 
     public void stop() {

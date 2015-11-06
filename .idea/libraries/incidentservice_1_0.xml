@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="incidentservice-1.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Libraries/incidentservice-1.0/incidentservice-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/incidentservice-1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

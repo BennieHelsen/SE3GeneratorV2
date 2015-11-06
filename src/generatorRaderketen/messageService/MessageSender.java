@@ -6,6 +6,7 @@ import com.rabbitmq.client.ConnectionFactory;
 
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by Thomas on 2/11/2015.
@@ -26,7 +27,7 @@ public class MessageSender {
 
         channel.basicPublish("", QUEUE_NAME, null, xml);
 
-
+        System.out.println(Arrays.toString(xml));
         channel.close();
         connection.close();
 

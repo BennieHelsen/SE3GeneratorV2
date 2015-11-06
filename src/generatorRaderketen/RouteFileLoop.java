@@ -26,6 +26,8 @@ public class RouteFileLoop implements Runnable {
             // to the main thread so they can be reported to the user of the simulation
            // thread.setUncaughtExceptionHandler(this);
             thread.start();
+
+            System.out.println("possistionloop:" + shipId);
         }
     }
 }
