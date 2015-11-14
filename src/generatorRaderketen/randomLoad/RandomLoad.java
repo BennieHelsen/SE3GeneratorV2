@@ -1,7 +1,7 @@
 package generatorRaderketen.randomLoad;
 
-import generatorRaderketen.PositionMessage;
-import generatorRaderketen.PositionMessageLoop;
+import generatorRaderketen.simulation.positionMessage.PositionMessage;
+import generatorRaderketen.simulation.positionMessage.PositionMessageLoop;
 
 import java.util.Random;
 
@@ -12,8 +12,8 @@ public class RandomLoad {
 
 
     private int[] timeFrequentie = new int[24];
-    private int[] shipIds = new int[350];
-    private String[] centraleIds;
+    private static int[] shipIds = new int[350];
+    private static String[] centraleIds;
     private   Random rand = new Random();
 
     public RandomLoad() {
@@ -51,7 +51,7 @@ public class RandomLoad {
 
     public void start(){
         for (int i = 0; i < timeFrequentie.length; i++){
-            System.out.println("TIme :" + i + ":00. Messages: "  + timeFrequentie[i]);
+            System.out.println("Time :" + i + ":00. Messages: "  + timeFrequentie[i]);
             for (int j = 0; j< timeFrequentie[i] ; j++){
 
                 int shipId = shipIds[rand.nextInt(shipIds.length)];
@@ -72,5 +72,20 @@ public class RandomLoad {
 
             }
         }
+    }
+
+    public static void sendRandomPositionMessage(){
+        Random rand = new Random();
+
+        int shipId = shipIds[rand.nextInt(shipIds.length)];
+        String centaleId = centraleIds[rand.nextInt(centraleIds.length)];
+
+        int distanceToLoadingDock = rand.nextInt(80000);
+
+        PositionMessageLoop loop = new PositionMessageLoop(new PositionMessage(String.valueOf(rand.nextInt(50000)), String.valueOf(distanceToLoadingDock), String.valueOf(shipId),centaleId));
+
+        Thread thread = new Thread(loop);
+
+        thread.start();
     }
 }

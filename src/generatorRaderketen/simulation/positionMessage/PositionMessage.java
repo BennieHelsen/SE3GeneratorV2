@@ -1,4 +1,4 @@
-package generatorRaderketen;
+package generatorRaderketen.simulation.positionMessage;
 
 
 
@@ -27,10 +27,11 @@ public class PositionMessage {
         this.centralId = centralId;
         this.timestamp = new Date();
     }
-    @XmlElement
+
     public String getDelay() {
         return delay;
     }
+
     @XmlElement
     public String getDistanceToLoadingDock() {
         return distanceToLoadingDock;

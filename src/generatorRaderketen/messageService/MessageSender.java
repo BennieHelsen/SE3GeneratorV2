@@ -10,10 +10,8 @@ import java.io.IOException;
 /**
  * Created by Thomas on 2/11/2015.
  */
-public class MessageSender {
+public class MessageSender implements IMessageSender {
     private final static String QUEUE_NAME = "messagebroker";
-
-
 
     public static void sendMessage(byte[] xml) throws IOException {
          ConnectionFactory factory = new ConnectionFactory();

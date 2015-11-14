@@ -1,11 +1,14 @@
-package generatorRaderketen;
+package generatorRaderketen.simulation.route;
 
+
+import generatorRaderketen.simulation.route.Route;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -14,7 +17,7 @@ import java.util.HashMap;
 public class RoutesReader {
 
 
-    public static HashMap loadCSVs(String directory) throws IOException {
+    public  HashMap loadCSVs(String directory) throws IOException {
 
         HashMap<String, ArrayList<Route>> allRoutes = new HashMap<>();
 
@@ -31,7 +34,7 @@ public class RoutesReader {
     }
 
     //voor elk shipid.csv elke row inlezen en in arraylist steken.
-    private static ArrayList<Route> readCSV(Path file) {
+    private  ArrayList<Route> readCSV(Path file) {
 
         ArrayList<Route> routes = new ArrayList<>();
 

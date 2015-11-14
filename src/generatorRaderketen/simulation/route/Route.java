@@ -1,4 +1,4 @@
-package generatorRaderketen;
+package generatorRaderketen.simulation.route;
 
 /**
  * Created by Thomas on 1/11/2015.
