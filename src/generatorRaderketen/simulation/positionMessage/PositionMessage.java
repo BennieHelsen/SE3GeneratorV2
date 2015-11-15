@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 /**
- * Created by Thomas on 1/11/2015.
+ * This is an entity class for a positionMessage. This class will be converted to XML and send to the processing unit.
  */
 
 @XmlRootElement

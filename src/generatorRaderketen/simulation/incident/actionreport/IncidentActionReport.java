@@ -3,7 +3,7 @@ package generatorRaderketen.simulation.incident.actionreport;
 import java.util.HashMap;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * Entity class representing a IncidentActionReport
  */
 public class IncidentActionReport {
     private String incidentType,shipId,dangerousCargo,numberOfPassengers,acctionToTake,centraleId;

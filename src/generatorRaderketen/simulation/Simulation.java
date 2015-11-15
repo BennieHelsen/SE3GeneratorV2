@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by Thomas on 1/11/2015.
+ * This is the main Simulation class. It inits and start 3 other smaller simulators: IncidentSimulator,RouteSimulator,PositionMessageSimulator
  */
 public class Simulation implements Thread.UncaughtExceptionHandler {
 
@@ -40,20 +40,13 @@ public class Simulation implements Thread.UncaughtExceptionHandler {
 
     private void init() throws IOException {
         routeSimulator.init(positionMessageSimulator);
-
-
         incidentSimulator.init(routeSimulator.getShipIds());
-
 
     }
 
     public void start() {
-
         positionMessageSimulator.start(routeSimulator);
-
-        incidentSimulator.start();
-
-
+       incidentSimulator.start();
     }
 
 

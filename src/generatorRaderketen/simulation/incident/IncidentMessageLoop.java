@@ -5,7 +5,7 @@ import generatorRaderketen.messageService.MessageSender;
 import java.io.IOException;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * This class implements Runnable. It is used for the parallel processing of the messages. Each IncidentMessage will have each own loop.
  */
 public class IncidentMessageLoop implements Runnable {
 

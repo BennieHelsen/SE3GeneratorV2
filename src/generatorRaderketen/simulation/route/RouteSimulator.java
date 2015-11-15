@@ -9,11 +9,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * This class starts the simulation (the loading) of the different CSV files and saves them as a HashMap
  */
 public class RouteSimulator {
     private final String routesDirectory = "./routes";
-    private static HashMap allRoutes;
+    private  HashMap allRoutes;
     private RoutesReader routesReader;
 
     public RouteSimulator() {

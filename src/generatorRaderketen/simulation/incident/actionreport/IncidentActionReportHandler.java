@@ -1,14 +1,15 @@
 package generatorRaderketen.simulation.incident.actionreport;
 
 import generatorRaderketen.messageService.IncidentActionReportReceiver;
-import generatorRaderketen.randomLoad.RandomLoad;
+import generatorRaderketen.messageService.MessageSender;
+import generatorRaderketen.randomLoad.RandomLoadSimulator;
 import generatorRaderketen.simulation.incident.IncidentReporter;
-import generatorRaderketen.simulation.incident.IncidentSimulator;
-import generatorRaderketen.simulation.incident.actionreport.IncidentActionReport;
 import generatorRaderketen.simulation.positionMessage.PositionMessageSimulator;
 
+import java.io.IOException;
+
 /**
- * Created by Thomas on 14/11/2015.
+ * This class handles all incoming action reports and takes needed measures.
  */
 public class IncidentActionReportHandler {
 
@@ -28,10 +29,10 @@ public class IncidentActionReportHandler {
 
     public void handle(IncidentActionReport message) throws InterruptedException {
 
-        //aanpassen: message controleren op type
-        if (true) {
+
+
             incidentHandlingInProgress = true;
-        }
+
         if (message.getIncidentType().equalsIgnoreCase("Schade")){
             messageSimulator.setSafetyZone(message.getCentraleId());
         }
@@ -50,7 +51,9 @@ public class IncidentActionReportHandler {
             Thread.sleep(delayFrequentie);
         }
 
+        sendAllesOK();
         resumeRouteProcessing();
+
 
 
     }
@@ -62,7 +65,8 @@ public class IncidentActionReportHandler {
     }
 
     private void simulateDeviatingShip() {
-        RandomLoad.sendRandomPositionMessage();
+        new RandomLoadSimulator().sendRandomPositionMessage();
+
     }
 
     private void stopRouteProcessing() {
@@ -81,6 +85,18 @@ public class IncidentActionReportHandler {
 
     private boolean getShipStatus(String shipId) {
         return IncidentReporter.getStatus(shipId);
+    }
+
+    private void sendAllesOK(){
+
+        String message = "<incident-status>AllesNormaal</incident-status>";
+
+        try {
+            MessageSender.sendMessage(message.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

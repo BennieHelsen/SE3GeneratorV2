@@ -8,7 +8,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import java.io.IOException;
 
 /**
- * Created by Thomas on 2/11/2015.
+ * This class uses the RabbitMQ api for sending messages over a queue
  */
 public class MessageSender implements IMessageSender {
     private final static String QUEUE_NAME = "messagebroker";

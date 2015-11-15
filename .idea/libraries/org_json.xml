@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="org.json">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Libraries/org.json.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/org.json.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * This is an entity class of a IncidentReport.
  */
 
 @XmlRootElement

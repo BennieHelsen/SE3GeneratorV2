@@ -1,18 +1,17 @@
 package generatorRaderketen.simulation.route;
 
 
-import generatorRaderketen.simulation.route.Route;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.HashMap;
 
 /**
- * Created by Thomas on 1/11/2015.
+ * This class processes all the files in a given path. It returns them as a HashMap
  */
 public class RoutesReader {
 

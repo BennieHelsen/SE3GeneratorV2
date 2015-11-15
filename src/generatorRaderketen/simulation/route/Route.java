@@ -1,7 +1,7 @@
 package generatorRaderketen.simulation.route;
 
 /**
- * Created by Thomas on 1/11/2015.
+ * This is an entity class for a Route. This will be use for rows form the CSV files
  */
 public class Route {
 

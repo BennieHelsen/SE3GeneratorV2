@@ -16,7 +16,7 @@ import java.io.StringReader;
 
 
 /**
- * Created by Thomas on 14/11/2015.
+ * Class that recieves messages over a subscribe/publish model queue
  */
 public class IncidentActionReportReceiver implements Runnable{
 

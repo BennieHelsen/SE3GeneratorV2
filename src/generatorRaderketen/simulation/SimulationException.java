@@ -1,7 +1,7 @@
 package generatorRaderketen.simulation;
 
 /**
- * Created by Thomas on 2/11/2015.
+ * Exception thrown by Simulation
  */
 public class SimulationException extends RuntimeException {
     public SimulationException(String message, Throwable cause) {

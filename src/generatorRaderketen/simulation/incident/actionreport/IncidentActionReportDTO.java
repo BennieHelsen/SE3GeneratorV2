@@ -3,7 +3,7 @@ package generatorRaderketen.simulation.incident.actionreport;
 import java.util.HashMap;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * Data Transfer Object for an IncidentActionReport
  */
 public class IncidentActionReportDTO {
     private String incidentType,shipId,dangerousCargo,numberOfPassengers,acctionToTake,centraleId;

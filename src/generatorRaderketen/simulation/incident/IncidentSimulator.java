@@ -7,7 +7,7 @@ import generatorRaderketen.utilities.DelayListFiller;
 import java.util.*;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * This class starts the simulation (the incidentreporting and handling of incoming action reports). The reportsdelay are generated automaticly by DelayListFiller.
  */
 public class IncidentSimulator {
 

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * This class starts the simulation (the sending) of the different PositionMessage objects. It's able to pause to processing if needed.
  */
 public class PositionMessageSimulator {
 

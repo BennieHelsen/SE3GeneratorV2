@@ -6,9 +6,9 @@ import generatorRaderketen.simulation.positionMessage.PositionMessageLoop;
 import java.util.Random;
 
 /**
- * Created by Thomas on 2/11/2015.
+ * This is a simulator for generating random load
  */
-public class RandomLoad {
+public class RandomLoadSimulator {
 
 
     private int[] timeFrequentie = new int[24];
@@ -16,7 +16,7 @@ public class RandomLoad {
     private static String[] centraleIds;
     private   Random rand = new Random();
 
-    public RandomLoad() {
+    public RandomLoadSimulator() {
         init();
     }
 
@@ -74,7 +74,9 @@ public class RandomLoad {
         }
     }
 
-    public static void sendRandomPositionMessage(){
+    public  void sendRandomPositionMessage(){
+
+
         Random rand = new Random();
 
         int shipId = shipIds[rand.nextInt(shipIds.length)];
@@ -82,7 +84,8 @@ public class RandomLoad {
 
         int distanceToLoadingDock = rand.nextInt(80000);
 
-        PositionMessageLoop loop = new PositionMessageLoop(new PositionMessage(String.valueOf(rand.nextInt(50000)), String.valueOf(distanceToLoadingDock), String.valueOf(shipId),centaleId));
+        PositionMessageLoop loop = new PositionMessageLoop(new PositionMessage(String.valueOf("0"), String.valueOf(distanceToLoadingDock), String.valueOf(shipId),centaleId));
+
 
         Thread thread = new Thread(loop);
 

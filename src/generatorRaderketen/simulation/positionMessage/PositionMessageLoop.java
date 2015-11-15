@@ -11,7 +11,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 /**
- * Created by Thomas on 2/11/2015.
+ * This class implements Runnable. It is used for the parallel processing of the messages. Each PositionMessage will have each own loop.
  */
 public class PositionMessageLoop implements Runnable {
 
@@ -21,6 +21,8 @@ public class PositionMessageLoop implements Runnable {
     public PositionMessageLoop(PositionMessage positionMessage) {
         this.positionMessage = positionMessage;
     }
+
+
 
     @Override
     public void run() {
@@ -40,10 +42,17 @@ public class PositionMessageLoop implements Runnable {
         try {
 
             Writer writer = new StringWriter();
-            Marshaller.marshal(positionMessage, writer);
+            Marshaller marshaller = new Marshaller(writer);
+
+           marshaller.marshal(positionMessage);
+
             MessageSender.sendMessage(writer.toString().getBytes());
 
-        } catch (IOException | MarshalException | ValidationException e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (MarshalException e) {
+            e.printStackTrace();
+        } catch (ValidationException e) {
             e.printStackTrace();
         }
     }

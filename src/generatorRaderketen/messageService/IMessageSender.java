@@ -1,7 +1,7 @@
 package generatorRaderketen.messageService;
 
 /**
- * Created by Thomas on 14/11/2015.
+ * Interface for implenting a message sender
  */
 public interface IMessageSender {
 

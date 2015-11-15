@@ -15,7 +15,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 /**
- * Created by Thomas on 3/11/2015.
+ * This class uses the IncidentServiceProxy to retrieve information of a given shipId (status and incidentReport)
  */
 public class IncidentReporter {
 
@@ -31,14 +31,14 @@ public class IncidentReporter {
             IncidentReport report = new IncidentReport(incident.get("incidentType"), incident.get("IMO"));
 
 
-            try {
-                Marshaller.marshal(report, writer);
-            } catch (MarshalException | ValidationException e) {
-                e.printStackTrace();
-            }
+            Marshaller marshaller = new Marshaller(writer);
+
+            marshaller.marshal(report);
 
 
-        } catch (JSONException | IOException e) {
+
+
+        } catch (JSONException | IOException | MarshalException | ValidationException e) {
             e.printStackTrace();
         }
 
